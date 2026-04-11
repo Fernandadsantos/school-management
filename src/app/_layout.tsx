@@ -6,13 +6,10 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 
-
 import '@/global.css';
 import { GluestackUIProvider } from '@/src/components/ui/gluestack-ui-provider';
 
-export {
-  ErrorBoundary
-} from 'expo-router';
+export { ErrorBoundary } from 'expo-router';
 
 export const unstable_settings = {
   initialRouteName: '(tabs)',
@@ -44,10 +41,8 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-
   return (
-
-    <GluestackUIProvider mode="dark">
+    <GluestackUIProvider mode="light">
       <ThemeProvider value={DefaultTheme}>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -55,6 +50,5 @@ function RootLayoutNav() {
         </Stack>
       </ThemeProvider>
     </GluestackUIProvider>
-
   );
 }

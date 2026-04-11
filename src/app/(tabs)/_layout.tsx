@@ -1,13 +1,18 @@
+import { makeServer } from '@/src/service/server';
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-export default function TabLayout() {
+if (__DEV__) {
+  makeServer();
+}
 
+export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
