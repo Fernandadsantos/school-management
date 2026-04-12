@@ -2,6 +2,7 @@ import { SchoolState } from '@/src/interfaces';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
+import { useClassStore } from '../../classes/store/useClassesStore';
 
 export const useSchoolStore = create<SchoolState>()(
   persist(
@@ -19,7 +20,7 @@ export const useSchoolStore = create<SchoolState>()(
 
           if (!response.ok) {
             const text = await response.text();
-            console.log('Resposta não é JSON:', text);
+            console.error('Resposta não é JSON:', text);
             return;
           }
 
@@ -79,13 +80,17 @@ export const useSchoolStore = create<SchoolState>()(
       deleteSchool: async (id) => {
         set({ isLoading: true });
         try {
-          await fetch(`api/schools/${id}`, {
-            method: 'DELETE',
-          });
+          await fetch(`api/schools/${id}`, { method: 'DELETE' });
 
           set((state) => ({
-            schools: state.schools.filter((s) => s.id !== id),
+            schools: state.schools.filter((s) => String(s.id) !== String(id)),
           }));
+
+          useClassStore.setState((state) => {
+            const updatedClasses = state.classes.filter((c) => String(c.schoolId) !== String(id));
+
+            return { ...state, classes: updatedClasses };
+          });
         } catch (error) {
           console.error('Erro ao excluir escola:', error);
         } finally {

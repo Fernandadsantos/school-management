@@ -2,15 +2,13 @@ import { Box } from '@/src/components/ui/box';
 import { Card } from '@/src/components/ui/card';
 import { Heading } from '@/src/components/ui/heading';
 import { Text } from '@/src/components/ui/text';
+import { VStack } from '@/src/components/ui/vstack';
+import { colorMap, colors } from '@/src/constants/constants';
 import { ListSchoolProps, School } from '@/src/interfaces/index';
 import { router } from 'expo-router';
 import { ChevronRightIcon } from 'lucide-react-native';
 import { FlatList, Pressable, View } from 'react-native';
-// import DeleteButton from '../deleteButton/deleteButton';
-// import EditButton from '../editButton/editButton';
-import BtnDeleteConfirmation from '@/src/components/btnDeleteConfirmation/btnDeleteConfirmation';
-import { VStack } from '@/src/components/ui/vstack';
-import { colorMap, colors } from '@/src/constants/constants';
+import BtnDeleteSchool from '../btnDeleteSchool/btnDeleteSchool';
 import BtnEditSchool from '../btnEditSchool/btnEditSchool';
 import SchoolCardContent from '../schoolCardContent/schoolCardContent';
 
@@ -49,7 +47,7 @@ export default function SchoolList({ data, handleEdit, handleDelete }: ListSchoo
               <View className="flex-row justify-end gap-3 h-10 items-center">
                 <View className="flex-row ">
                   <BtnEditSchool item={item} />
-                  <BtnDeleteConfirmation id={item.id} />
+                  <BtnDeleteSchool id={item.id} />
                 </View>
                 <ChevronRightIcon size={20} color="#6B7280" />
               </View>
