@@ -26,7 +26,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="schoolClasses"
+        name="classes"
         options={{
           title: 'Turmas',
         }}

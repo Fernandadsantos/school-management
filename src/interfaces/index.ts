@@ -1,4 +1,5 @@
 export type Shifts = 'matutino' | 'vespertino' | 'noturno';
+export type colors = 'indigo' | 'emerald' | 'amber' | 'rose';
 
 export interface SchoolClass {
   id: string;
@@ -21,6 +22,17 @@ export type FormDataSchool = {
   address: string;
 };
 
+export type FormDataClass = {
+  name: string;
+  classShift: Shifts;
+  year: number;
+};
+
+export interface ClassFormProps {
+  initialData?: SchoolClass;
+  onSubmit: (data: FormDataClass) => Promise<void>;
+}
+
 export interface SchoolState {
   schools: School[];
   isLoading: boolean;
@@ -39,7 +51,7 @@ export interface ClassesState {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   fetchClasses: () => Promise<void>;
-  addClass: (schoolClass: SchoolClass) => void;
+  addClass: (schoolClass: Omit<SchoolClass, 'id'>) => Promise<void>;
   editClass: (id: string, updatedSchool: Partial<SchoolClass>) => Promise<void>;
   deleteClass: (id: string) => Promise<void>;
 }
@@ -64,10 +76,19 @@ export interface ListSchoolProps {
   handleDelete: (id: string) => Promise<void>;
 }
 
+export interface ListClassProps {
+  data: SchoolClass[];
+}
+
 export interface SchoolCardContentProps {
-  selectedColor: 'indigo' | 'emerald' | 'amber' | 'rose';
+  selectedColor: colors;
   address: string;
-  qtdClasses?: number;
+  qtdClasses: number;
+}
+
+export interface ClassCardContentProps {
+  selectedColor: colors;
+  shift: Shifts;
 }
 
 export interface FloatingBtnProps {
@@ -86,6 +107,12 @@ export interface BtnSubmitProps {
 }
 
 export interface BtnConfirmationProps {
+  onConfirmDelete: () => Promise<void>;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface BtnDeleteClassProps {
   id: string;
 }
 
@@ -101,6 +128,15 @@ export interface ModalEditSchoolProps {
   item: School;
 }
 
+export interface ModalEditClassProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  item: SchoolClass;
+}
+
 export interface BtnEditSchoolProps {
   item: School;
+}
+export interface BtnEditClassProps {
+  item: SchoolClass;
 }

@@ -6,7 +6,14 @@ export function makeServer({ environment = 'development' } = {}) {
     environment,
 
     serializers: {
-      application: RestSerializer,
+      application: RestSerializer.extend({
+        embed: true,
+        include: ['classes'],
+      }),
+      class: RestSerializer.extend({
+        serializeIds: 'always',
+        keyForForeignKey: () => 'schoolId',
+      }),
     },
 
     models: {
@@ -34,7 +41,7 @@ export function makeServer({ environment = 'development' } = {}) {
       } as School);
 
       server.create('class', {
-        id: '101',
+        id: '1',
         name: '3º Ano A',
         classShift: 'matutino',
         year: 2024,
@@ -42,11 +49,11 @@ export function makeServer({ environment = 'development' } = {}) {
       } as SchoolClass);
 
       server.create('class', {
-        id: '102',
+        id: '2',
         name: '2º Ano B',
         classShift: 'vespertino',
         year: 2024,
-        schoolId: school1.id,
+        schoolId: school2.id,
       } as SchoolClass);
     },
 
@@ -78,8 +85,9 @@ export function makeServer({ environment = 'development' } = {}) {
         const school = schema.find('school', id);
 
         if (school) {
-          schema.where('class', { schoolId: id }).destroy();
-          return school.destroy();
+          school.classes.destroy();
+          school.destroy();
+          return new Response(204);
         }
         return new Response(404, {}, { error: 'Escola não encontrada' });
       });
@@ -90,12 +98,8 @@ export function makeServer({ environment = 'development' } = {}) {
 
       this.post('/classes', (schema, request) => {
         const attrs = JSON.parse(request.requestBody);
-        const { schoolId, ...rest } = attrs;
 
-        return schema.create('class', {
-          ...rest,
-          schoolId: schoolId,
-        });
+        return schema.create('class', attrs);
       });
 
       this.patch('/classes/:id', (schema: any, request) => {
