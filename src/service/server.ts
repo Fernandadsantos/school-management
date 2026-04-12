@@ -26,6 +26,13 @@ export function makeServer({ environment = 'development' } = {}) {
         numClasses: 2,
       } as School);
 
+      const school2 = server.create('school', {
+        id: '2',
+        name: 'Escola Estadual',
+        address: 'Rua B, 123',
+        numClasses: 0,
+      } as School);
+
       server.create('class', {
         id: '101',
         name: '3º Ano A',

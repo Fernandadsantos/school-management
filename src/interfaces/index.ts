@@ -16,13 +16,19 @@ export interface School {
   classes: SchoolClass[];
 }
 
+export type FormDataSchool = {
+  name: string;
+  address: string;
+};
+
 export interface SchoolState {
   schools: School[];
   isLoading: boolean;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   fetchSchools: () => Promise<void>;
-  addSchool: (school: School) => Promise<void>;
+  getSchoolById: (id: string) => School | undefined;
+  addSchool: (school: Omit<School, 'id'>) => Promise<void>;
   editSchool: (id: string, updatedSchool: Partial<School>) => Promise<void>;
   deleteSchool: (id: string) => Promise<void>;
 }
@@ -52,16 +58,49 @@ export interface SearchProps {
   searchQuery: string;
 }
 
-export interface ListItemsProps {
-  data: School[] | SchoolClass[];
-  type: 'school' | 'classes';
-  handleEdit: (id: string, updatedData: Partial<School | SchoolClass>) => Promise<void>;
+export interface ListSchoolProps {
+  data: School[];
+  handleEdit: (id: string, updatedData: School) => Promise<void>;
   handleDelete: (id: string) => Promise<void>;
 }
 
-export interface CardContentProps {
+export interface SchoolCardContentProps {
   selectedColor: 'indigo' | 'emerald' | 'amber' | 'rose';
+  address: string;
+  qtdClasses?: number;
+}
+
+export interface FloatingBtnProps {
+  route: string;
+}
+
+export interface HeaderDetailsProps {
+  title: string;
   subtitle: string;
-  qtdClasses: number;
-  type: 'school' | 'classes';
+}
+
+export interface BtnSubmitProps {
+  isValid: boolean;
+  btnTitle: string;
+  handleCreate: (setIsLoading: React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
+}
+
+export interface BtnConfirmationProps {
+  id: string;
+}
+
+export interface ModalDeleteConfirmationProps {
+  isOpen: boolean;
+  handleClose: () => void;
+  onConfirmDelete: () => Promise<void>;
+}
+
+export interface ModalEditSchoolProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  item: School;
+}
+
+export interface BtnEditSchoolProps {
+  item: School;
 }

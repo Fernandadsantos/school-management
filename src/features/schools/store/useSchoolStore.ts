@@ -32,6 +32,12 @@ export const useSchoolStore = create<SchoolState>()(
         }
       },
 
+      getSchoolById: (id: string) => {
+        const { schools } = get();
+
+        return schools.find((e) => e.id === id);
+      },
+
       addSchool: async (school) => {
         set({ isLoading: true });
         try {
