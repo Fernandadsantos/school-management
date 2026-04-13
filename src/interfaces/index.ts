@@ -36,6 +36,11 @@ export interface ClassFormProps {
   onSubmit: (data: FormDataClass) => Promise<void>;
 }
 
+export interface SchoolFormProps {
+  initialData?: School;
+  onSubmit: (data: FormDataSchool) => Promise<void>;
+}
+
 export interface SchoolState {
   schools: School[];
   isLoading: boolean;

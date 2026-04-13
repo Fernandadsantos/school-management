@@ -1,75 +1,38 @@
 import { Heading } from '@/src/components/ui/heading';
-import { Input, InputField } from '@/src/components/ui/input';
 import {
   Modal,
   ModalBackdrop,
   ModalBody,
+  ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
 } from '@/src/components/ui/modal';
-import { Pressable } from '@/src/components/ui/pressable';
-import { Text } from '@/src/components/ui/text';
-import { VStack } from '@/src/components/ui/vstack';
-import { ModalEditSchoolProps } from '@/src/interfaces';
-import { useState } from 'react';
+import { FormDataSchool, ModalEditSchoolProps } from '@/src/interfaces';
+import { X } from 'lucide-react-native';
 import { useSchoolStore } from '../../store/useSchoolStore';
+import SchoolForm from '../schoolForm/schoolForm';
 
 export default function ModalEditSchool({ isOpen, setIsOpen, item }: ModalEditSchoolProps) {
-  const [name, setName] = useState(item.name);
-  const [address, setAddress] = useState(item.address || '');
   const { editSchool } = useSchoolStore();
 
-  const handleClose = () => {
-    setName(item.name);
-    setAddress(item.address || '');
+  const handleUpdate = async (data: FormDataSchool) => {
+    await editSchool(item.id, data);
     setIsOpen(false);
   };
 
-  const onSave = async () => {
-    const updatedData = {
-      name,
-      address: item.address ? address : undefined,
-    };
-
-    await editSchool(String(item.id), updatedData);
-    handleClose();
-  };
-
   return (
-    <Modal isOpen={isOpen} onClose={handleClose}>
+    <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="lg">
       <ModalBackdrop />
-      <ModalContent>
+      <ModalContent className="bg-white">
         <ModalHeader>
-          <Heading size="lg">Editar {item.name}</Heading>
+          <Heading size="lg">Editar Turma</Heading>
+          <ModalCloseButton>
+            <X size={20} color={'#000'} />
+          </ModalCloseButton>
         </ModalHeader>
         <ModalBody>
-          <VStack space="md">
-            <VStack space="xs">
-              <Text size="sm">Nome</Text>
-              <Input>
-                <InputField value={name} onChangeText={setName} />
-              </Input>
-            </VStack>
-
-            {item.address && (
-              <VStack space="xs">
-                <Text size="sm">Endereço</Text>
-                <Input>
-                  <InputField value={address} onChangeText={setAddress} />
-                </Input>
-              </VStack>
-            )}
-          </VStack>
+          <SchoolForm initialData={item} onSubmit={handleUpdate} />
         </ModalBody>
-        <ModalFooter className="gap-3">
-          <Pressable onPress={handleClose} className="bg-blue-500  p-2 rounded-md">
-            <Text className="text-white font-semibold">Cancelar</Text>
-          </Pressable>
-          <Pressable onPress={onSave} className="bg-green-500  p-2 rounded-md">
-            <Text className="text-white font-semibold">Salvar Alterações</Text>
-          </Pressable>
-        </ModalFooter>
       </ModalContent>
     </Modal>
   );
