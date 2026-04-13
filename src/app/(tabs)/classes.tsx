@@ -1,5 +1,5 @@
-import Class from '../classes/class';
+import ClassScreen from '@/src/features/classes';
 
 export default function Classes() {
-  return <Class />;
+  return <ClassScreen />;
 }

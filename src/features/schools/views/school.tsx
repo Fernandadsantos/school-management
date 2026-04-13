@@ -45,7 +45,7 @@ export default function School() {
           <SchoolList handleDelete={deleteSchool} handleEdit={editSchool} data={filteredSchools} />
         </View>
       )}
-      <FloatingBtn route="/school/createSchool" />
+      <FloatingBtn route="/school/createSchoolScreen" />
     </View>
   );
 }

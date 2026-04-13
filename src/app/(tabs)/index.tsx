@@ -1,5 +1,5 @@
-import Home from '../home/home';
+import HomeScreen from '@/src/features/home';
 
 export default function Index() {
-  return <Home />;
+  return <HomeScreen />;
 }

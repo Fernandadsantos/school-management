@@ -1,15 +1,13 @@
-import AnimatedCard from '@/src/components/animatedCard/animatedCard';
+import AnimatedCard from '@/src/features/home/components/animatedCard/animatedCard';
 import CustomSkeleton from '@/src/components/customSkeleton/customSkeleton';
-import MiniCard from '@/src/components/miniCard/miniCard';
+import MiniCard from '@/src/features/home/components/miniCard/miniCard';
 import { useClassStore } from '@/src/features/classes/store/useClassesStore';
 import { useSchoolStore } from '@/src/features/schools/store/useSchoolStore';
-import { useRouter } from 'expo-router';
 import { GraduationCap, Plus, School } from 'lucide-react-native';
 import { useEffect } from 'react';
 import { Text, View } from 'react-native';
 
 export default function Home() {
-  const router = useRouter();
   const { fetchClasses, classes } = useClassStore();
   const { fetchSchools, schools, isLoading } = useSchoolStore();
 

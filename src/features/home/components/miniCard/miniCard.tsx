@@ -16,7 +16,7 @@ export default function MiniCard({ Icon, title, subtitle }: MiniCardProps) {
       >
         <View className="gap-3 ">
           <Pressable
-            onPress={() => router.push('/school/createSchool')}
+            onPress={() => router.push('/school/createSchoolScreen')}
             className="bg-white p-4 rounded-2xl shadow-sm flex-row items-center justify-between active:bg-gray-50"
           >
             <View className="flex-row items-center gap-4">

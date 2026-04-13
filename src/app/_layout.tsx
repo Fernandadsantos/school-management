@@ -44,9 +44,9 @@ function RootLayoutNav() {
     <GluestackUIProvider mode="light">
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="school/createSchool" options={{ headerShown: false }} />
-        <Stack.Screen name="school/schoolDetails" options={{ headerShown: false }} />
-        <Stack.Screen name="classes/createClass" options={{ headerShown: false }} />
+        <Stack.Screen name="school/createSchoolScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="school/schoolDetailsScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="class/createClassScreen" options={{ headerShown: false }} />
       </Stack>
     </GluestackUIProvider>
   );

@@ -5,11 +5,12 @@ import { FormDataClass } from '@/src/interfaces';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { View } from 'react-native';
 
-export default function CreateSchool() {
+export default function CreateClass() {
   const router = useRouter();
   const { addClass } = useClassStore();
   const { schoolId } = useLocalSearchParams<{ schoolId: string }>();
 
+  console.log('schoolID: ', schoolId);
   const handleCreate = async (data: FormDataClass) => {
     await addClass({ ...data, schoolId: schoolId });
     router.back();
