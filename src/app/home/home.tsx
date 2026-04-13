@@ -4,7 +4,7 @@ import MiniCard from '@/src/components/miniCard/miniCard';
 import { useClassStore } from '@/src/features/classes/store/useClassesStore';
 import { useSchoolStore } from '@/src/features/schools/store/useSchoolStore';
 import { useRouter } from 'expo-router';
-import { Building, Plus } from 'lucide-react-native';
+import { Plus } from 'lucide-react-native';
 import { useEffect } from 'react';
 import { Text, View } from 'react-native';
 
@@ -49,7 +49,6 @@ export default function Home() {
 
             <View className="gap-3">
               <MiniCard Icon={Plus} title="Nova Escola" subtitle="Adicionar instituição" />
-              <MiniCard Icon={Building} title="Nova Turma" subtitle="Adicionar turma" />
             </View>
           </View>
         </View>
