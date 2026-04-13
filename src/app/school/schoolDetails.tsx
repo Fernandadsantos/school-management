@@ -1,5 +1,5 @@
 import FloatingBtn from '@/src/components/floatingBtn/floatingBtn';
-import HeaderDetails from '@/src/components/headerDetails/headerDetails';
+import Header from '@/src/components/header/header';
 import { Heading } from '@/src/components/ui/heading/index';
 import { Text } from '@/src/components/ui/text/index';
 import ClassList from '@/src/features/classes/components/classList/classList';
@@ -22,7 +22,7 @@ export default function SchoolDetails() {
   if (currentSchool) {
     return (
       <View className="flex-1 bg-[#F5F5F0]">
-        <HeaderDetails title={currentSchool.name} subtitle={currentSchool.address} />
+        <Header title={currentSchool.name} subtitle={currentSchool.address} isDetails={true} />
         <View className="flex-1  px-6 pt-6">
           {currentSchool.classes ? (
             <View className="flex-1">
