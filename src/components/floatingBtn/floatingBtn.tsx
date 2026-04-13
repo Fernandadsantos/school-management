@@ -8,7 +8,7 @@ export default function FloatingBtn({ route }: FloatingBtnProps) {
 
   return (
     <Pressable
-      onPress={() => router.push(route as any)}
+      onPress={() => router.push(route)}
       className="absolute bottom-6 right-6 w-16 h-16 bg-indigo-400 rounded-full items-center justify-center shadow-lg active:opacity-80 z-50"
     >
       <Icon as={AddIcon} size="xl" color="white" />

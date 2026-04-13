@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <View>
+    <View className="flex-1 bg-[#F5F5F0] pb-4">
       <View className="px-6 pt-14 pb-4">
         <Text className="text-2xl font-bold text-[#1A1A1A]">Olá, Administrador 👋</Text>
         <Text className="text-[#6B7280] text-sm mt-1">Aqui está o resumo das sus instituições</Text>
@@ -28,7 +28,7 @@ export default function Home() {
       {isLoading ? (
         <CustomSkeleton />
       ) : (
-        <View className="px-5 gap-5">
+        <View className="px-5 pt-5 gap-5">
           <AnimatedCard
             value={schools.length}
             label="Escolas Ativas"

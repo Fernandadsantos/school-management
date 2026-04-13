@@ -1,4 +1,4 @@
-import HeaderDetails from '@/src/components/headerDetails/headerDetails';
+import Header from '@/src/components/header/header';
 import ClassForm from '@/src/features/classes/components/classForm/classForm';
 import { useClassStore } from '@/src/features/classes/store/useClassesStore';
 import { FormDataClass } from '@/src/interfaces';
@@ -17,7 +17,11 @@ export default function CreateSchool() {
 
   return (
     <View className="flex-1 bg-[#fff] pb-4">
-      <HeaderDetails title="Cadastrar nova turma" subtitle="Adicione uma nova turma no sistema" />
+      <Header
+        title="Cadastrar nova turma"
+        subtitle="Adicione uma nova turma no sistema"
+        isDetails={true}
+      />
       <ClassForm onSubmit={handleCreate} />
     </View>
   );

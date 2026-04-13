@@ -28,7 +28,7 @@ export default function BtnSubmit({ isValid, btnTitle, handleCreate }: BtnSubmit
     <View>
       <Pressable
         disabled={!isValid || isLoading}
-        className={`mx-5 p-5 rounded-xl mb-10 ${isValid ? 'bg-indigo-500' : 'bg-gray-300'}`}
+        className={`mx-5 p-5 rounded-xl mb-5 ${isValid ? 'bg-indigo-500' : 'bg-gray-300'}`}
         onPress={() => handleCreate(setIsLoading)}
       >
         {isLoading ? (
