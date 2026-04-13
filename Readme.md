@@ -1,4 +1,4 @@
-# 📦 Gerenciador de Escolas e Turmas
+# 🏫 Gerenciador de Escolas e Turmas
 
 Um aplicativo mobile para gerenciamento de escolas públicas, permitindo o cadastro de escolas e suas respectivas turmas.
 
@@ -52,7 +52,7 @@ Siga os passos abaixo para rodar o projeto localmente:
 
 ### 3. Caso necessário configure o Reanimated :
 
-    Certifique-se de que o plugin do Reanimated está no seu babel.config.js.
+    Adicione 'react-native-reanimated/plugin' no seu babel.config.js.
 
 ### 4. Iniciar o Expo:
 
