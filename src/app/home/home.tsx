@@ -4,7 +4,7 @@ import MiniCard from '@/src/components/miniCard/miniCard';
 import { useClassStore } from '@/src/features/classes/store/useClassesStore';
 import { useSchoolStore } from '@/src/features/schools/store/useSchoolStore';
 import { useRouter } from 'expo-router';
-import { Plus } from 'lucide-react-native';
+import { GraduationCap, Plus, School } from 'lucide-react-native';
 import { useEffect } from 'react';
 import { Text, View } from 'react-native';
 
@@ -22,7 +22,9 @@ export default function Home() {
     <View className="flex-1 bg-[#F5F5F0] pb-4">
       <View className="px-6 pt-14 pb-4">
         <Text className="text-2xl font-bold text-[#1A1A1A]">Olá, Administrador 👋</Text>
-        <Text className="text-[#6B7280] text-sm mt-1">Aqui está o resumo das sus instituições</Text>
+        <Text className="text-[#6B7280] text-lg font-medium mt-1">
+          Aqui está o resumo das sus instituições
+        </Text>
       </View>
 
       {isLoading ? (
@@ -34,12 +36,14 @@ export default function Home() {
             label="Escolas Ativas"
             theme="blue"
             route="/(tabs)/schools"
+            Icon={School}
           />
           <AnimatedCard
             value={classes.length}
             label="Turmas Ativas"
             theme="yellow"
             route="/(tabs)/classes"
+            Icon={GraduationCap}
           />
 
           <View>

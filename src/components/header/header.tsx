@@ -24,7 +24,7 @@ export default function Header({
           </Pressable>
           <View className="flex gap-2">
             <Text className="text-2xl font-extrabold ">{title}</Text>
-            <Text className="text-xl text-gray-500 font-normal ml-1 mb-2">{subtitle}</Text>
+            <Text className="text-xl text-gray-500 font-medium ml-1 mb-2">{subtitle}</Text>
           </View>
         </View>
       </View>
@@ -35,7 +35,7 @@ export default function Header({
     <Box className="flex justify-between mb-4 gap-3">
       <View>
         <Text className="font-extrabold text-3xl">{title}</Text>
-        <Text className="text-lg text-gray-600">{subtitle}</Text>
+        <Text className="text-xl font-medium text-gray-600">{subtitle}</Text>
       </View>
       {setSearchQuery && searchQuery !== undefined && (
         <Search

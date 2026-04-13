@@ -5,7 +5,7 @@ import { School } from 'lucide-react-native';
 import { MotiView } from 'moti';
 import { Pressable, Text, View } from 'react-native';
 
-export default function AnimatedCard({ label, value, theme, route }: AnimatedCardProps) {
+export default function AnimatedCard({ label, value, theme, route, Icon }: AnimatedCardProps) {
   const router = useRouter();
 
   return (
@@ -23,11 +23,11 @@ export default function AnimatedCard({ label, value, theme, route }: AnimatedCar
         >
           <View className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full" />
           <View className="flex-row items-center gap-2 mb-2">
-            <School size={19} color="#e0e7ff" />
-            <Text className="text-lg font-medium text-indigo-100">{label}</Text>
+            <Icon size={19} color="#fff" />
+            <Text className="text-lg font-extrabold text-white">{label}</Text>
           </View>
 
-          <Text className="text-4xl font-bold text-white mb-1">{value}</Text>
+          <Text className="text-4xl font-extrabold text-white mb-1">{value}</Text>
         </LinearGradient>
       </MotiView>
     </Pressable>

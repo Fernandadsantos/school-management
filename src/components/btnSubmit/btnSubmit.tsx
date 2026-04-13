@@ -39,7 +39,7 @@ export default function BtnSubmit({ isValid, btnTitle, handleCreate }: BtnSubmit
           </View>
         ) : (
           <Text
-            className={`font-bold text-center text-lg ${isValid ? 'text-white' : 'text-gray-900'}`}
+            className={`font-extrabold text-center text-lg ${isValid ? 'text-white' : 'text-gray-900'}`}
           >
             {btnTitle}
           </Text>

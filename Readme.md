@@ -30,7 +30,6 @@ O projeto foi construído utilizando as versões mais estáveis das seguintes te
 
     GLuestack ui: ^3.0.16 (UI)
 
-
 ## 📥 Instalação e Execução
 
 Siga os passos abaixo para rodar o projeto localmente:
@@ -61,7 +60,6 @@ Siga os passos abaixo para rodar o projeto localmente:
     npx expo start
     # Pressione a para Android, i para iOS ou escaneie o QR Code com o app Expo Go.
 
-
 ## 🛠️ Mock de Back-end (MirageJS)
 
 Este projeto utiliza o MirageJS para simular uma API REST em memória. Não é necessário configurar um banco de dados externo.
@@ -81,27 +79,30 @@ Este projeto utiliza o MirageJS para simular uma API REST em memória. Não é n
       # OU
       npx expo start --clear
 
-
 ## 📱 Demonstração
 
 ### 📊 Visão Geral e Listagens
-| Dashboard | Lista de Escolas | Lista de Turmas |
-| :---: | :---: | :---: |
+
+|                               Dashboard                               |                                      Lista de Escolas                                       |                                      Lista de Turmas                                      |
+| :-------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
 | <img src="./src/assets/screenshots/home.jpeg" width="250" alt="Home"> | <img src="./src/assets/screenshots/listar-escolas.jpeg" width="250" alt="Lista de Escolas"> | <img src="./src/assets/screenshots/listar-turmas.jpeg" width="250" alt="Lista de Turmas"> |
 
 ### Filtro de pesquisa
-| Pesquisa |
-| :---: |
+
+|                                      Pesquisa                                       |
+| :---------------------------------------------------------------------------------: |
 | <img src="./src/assets/screenshots/filtro-em-turmas.jpeg" width="250" alt="filtro"> |
 
 ### ➕ Cadastro e Detalhes
-| Detalhes da Escola | Nova Escola | Nova Turma |
-| :---: | :---: | :---: |
+
+|                                      Detalhes da Escola                                      |                                     Nova Escola                                      |                                     Nova Turma                                     |
+| :------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
 | <img src="./src/assets/screenshots/detalhes-escola.jpeg" width="250" alt="Detalhes da Loja"> | <img src="./src/assets/screenshots/criar-escola.jpeg" width="250" alt="Nova Escola"> | <img src="./src/assets/screenshots/criar-turma.jpeg" width="250" alt="Nova Turma"> |
 
 ### ✏️ Edição de Dados
-| Editar Escola | Editar Turma | Deletar Escola ou Turma |
-| :---: | :---: | :---: |
+
+|                                      Editar Escola                                      |                                     Editar Turma                                      |                               Deletar Escola ou Turma                               |
+| :-------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: |
 | <img src="./src/assets/screenshots/editar-escola.jpeg" width="250" alt="Editar Escola"> | <img src="./src/assets/screenshots/editar-turma.jpeg" width="250" alt="Editar Turma"> | <img src="./src/assets/screenshots/deletar-item.jpeg" width="250" alt="Nova Turma"> |
 
 ## 📝 Funcionalidades Principais
@@ -114,7 +115,6 @@ Este projeto utiliza o MirageJS para simular uma API REST em memória. Não é n
 
 - Animações Suaves: Feedback visual ao carregar e transitar entre telas com Moti.
 
-
-
+- Persistência com AsyncStorage.
 
 ✨ Desenvolvido por Fernanda Santos

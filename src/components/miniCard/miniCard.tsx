@@ -24,8 +24,8 @@ export default function MiniCard({ Icon, title, subtitle }: MiniCardProps) {
                 <Icon size={24} color="#0284c7" />
               </View>
               <View>
-                <Text className="font-semibold text-[#1A1A1A]">{title}</Text>
-                <Text className="text-xs text-[#6B7280]">{subtitle}</Text>
+                <Text className="font-semibold text-lg text-[#1A1A1A]">{title}</Text>
+                <Text className="text-base text-[#6B7280]">{subtitle}</Text>
               </View>
             </View>
             <ChevronRightIcon size={20} color="#D1D5DB" />

@@ -188,6 +188,7 @@ export interface AnimatedCardProps {
   value: number;
   theme: 'blue' | 'yellow';
   route: routes;
+  Icon: React.ForwardRefExoticComponent<LucideProps & React.RefAttributes<SVGSVGElement>>;
 }
 export interface MiniCardProps {
   Icon: React.ForwardRefExoticComponent<LucideProps & React.RefAttributes<SVGSVGElement>>;
