@@ -1,5 +1,4 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -43,14 +42,12 @@ export default function RootLayout() {
 function RootLayoutNav() {
   return (
     <GluestackUIProvider mode="light">
-      <ThemeProvider value={DefaultTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="school/createSchool" options={{ headerShown: false }} />
-          <Stack.Screen name="school/schoolDetails" options={{ headerShown: false }} />
-          <Stack.Screen name="classes/createClass" options={{ headerShown: false }} />
-        </Stack>
-      </ThemeProvider>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="school/createSchool" options={{ headerShown: false }} />
+        <Stack.Screen name="school/schoolDetails" options={{ headerShown: false }} />
+        <Stack.Screen name="classes/createClass" options={{ headerShown: false }} />
+      </Stack>
     </GluestackUIProvider>
   );
 }
