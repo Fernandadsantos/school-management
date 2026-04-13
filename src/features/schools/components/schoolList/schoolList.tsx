@@ -20,7 +20,7 @@ export default function SchoolList({ data, handleEdit, handleDelete }: ListSchoo
       <Pressable
         onPress={() => {
           router.push({
-            pathname: '/school/schoolDetails',
+            pathname: '/school/schoolDetailsScreen',
             params: {
               id: item.id,
               name: item.name,

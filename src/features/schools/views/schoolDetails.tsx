@@ -17,7 +17,7 @@ export default function SchoolDetails() {
 
   useEffect(() => {
     fetchSchools();
-  }, [currentSchool?.classes]);
+  }, []);
 
   if (currentSchool) {
     return (
@@ -40,7 +40,7 @@ export default function SchoolDetails() {
             </View>
           )}
         </View>
-        <FloatingBtn route={`/classes/createClass?schoolId=${currentSchool.id}`} />
+        <FloatingBtn route={`/class/createClassScreen?schoolId=${currentSchool.id}`} />
       </View>
     );
   }

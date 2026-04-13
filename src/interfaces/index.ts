@@ -27,20 +27,15 @@ export type routes =
   | '/schools'
   | `/schools?${string}`
   | `/schools#${string}`
-  | '/classes/class'
-  | `/classes/class?${string}`
-  | `/classes/class#${string}`
-  | '/classes/createClass'
-  | `/classes/createClass?${string}`
-  | `/classes/createClass#${string}`
-  | '/home/home'
-  | `/home/home?${string}`
-  | `/home/home#${string}`
-  | '/school/createSchool'
-  | `/school/createSchool?${string}`
-  | `/school/createSchool#${string}`
-  | '/school/school'
-  | `/school/school?${string}`;
+  | '/class/createClassScreen'
+  | `/class/createClassScreen?${string}`
+  | `/class/createClassScreen#${string}`
+  | '/school/createSchoolScreen'
+  | `/school/createSchoolScreen?${string}`
+  | `/school/createSchoolScreen#${string}`
+  | '/school/schoolDetailsScreen'
+  | `/school/schoolDetailsScreen?${string}`
+  | `/school/schoolDetailsScreen#${string}`;
 
 export interface SchoolClass {
   id: string;

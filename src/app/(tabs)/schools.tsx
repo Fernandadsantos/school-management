@@ -1,5 +1,5 @@
-import School from '../school/school';
+import SchoolScreen from '@/src/features/schools';
 
 export default function Schools() {
-  return <School />;
+  return <SchoolScreen />;
 }
