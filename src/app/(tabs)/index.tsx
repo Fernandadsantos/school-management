@@ -1,11 +1,5 @@
-import { Text, View } from 'react-native';
-
+import Home from '../home/home';
 
 export default function Index() {
-    return (
-        <View >
-            <Text >Escolas</Text>
-        </View>
-    );
+  return <Home />;
 }
-

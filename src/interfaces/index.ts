@@ -1,3 +1,6 @@
+import { ExternalPathString, RelativePathString } from 'expo-router';
+import { LucideProps } from 'lucide-react-native';
+
 export type Shifts = 'matutino' | 'vespertino' | 'noturno';
 export type colors = 'indigo' | 'emerald' | 'amber' | 'rose';
 
@@ -139,4 +142,54 @@ export interface BtnEditSchoolProps {
 }
 export interface BtnEditClassProps {
   item: SchoolClass;
+}
+
+export interface AnimatedCardProps {
+  label: string;
+  value: number;
+  theme: 'blue' | 'yellow';
+  route:
+    | '/(tabs)/schools'
+    | RelativePathString
+    | ExternalPathString
+    | '/_sitemap'
+    | `/_sitemap?${string}`
+    | `/_sitemap#${string}`
+    | '/(tabs)'
+    | '/(tabs)/classes'
+    | `/(tabs)/classes?${string}`
+    | `/(tabs)/classes#${string}`
+    | '/classes'
+    | `/classes?${string}`
+    | `/classes#${string}`
+    | `/(tabs)?${string}`
+    | `/(tabs)#${string}`
+    | '/'
+    | `/?${string}`
+    | `/#${string}`
+    | `/(tabs)/schools?${string}`
+    | `/(tabs)/schools#${string}`
+    | '/schools'
+    | `/schools?${string}`
+    | `/schools#${string}`
+    | '/classes/class'
+    | `/classes/class?${string}`
+    | `/classes/class#${string}`
+    | '/classes/createClass'
+    | `/classes/createClass?${string}`
+    | `/classes/createClass#${string}`
+    | '/home/home'
+    | `/home/home?${string}`
+    | `/home/home#${string}`
+    | '/school/createSchool'
+    | `/school/createSchool?${string}`
+    | `/school/createSchool#${string}`
+    | '/school/school'
+    | `/school/school?${string}`;
+}
+
+export interface MiniCardProps {
+  Icon: React.ForwardRefExoticComponent<LucideProps & React.RefAttributes<SVGSVGElement>>;
+  title: string;
+  subtitle: string;
 }
